@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/date', methods=['GET'])
 def get_current_date():
-    current_date = datetime.now(time)
+    current_date = datetime.now(timezone.utc)
     return current_date.strftime('%Y-%m-%d')
 
 @app.route('/time', methods=['GET'])
